@@ -27,6 +27,14 @@ const routes = [
     component: News,
   },
   {
+    path: '/news/:city',
+    component: News,
+  },
+  {
+    path: '/news/:city/:year',
+    component: News,
+  },
+  {
     path: '*',
     component: NotFound,
   },
