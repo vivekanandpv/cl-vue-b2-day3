@@ -31,7 +31,8 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/news" exact class="nav-link">
+          <!-- binding to router-link props dynamically -->
+          <router-link :to="link" exact class="nav-link">
             <span>News</span>
           </router-link>
         </li>
@@ -41,7 +42,24 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data: function () {
+    return {
+      link: {
+        //    refer to route config for named routes
+        name: "news-with-city-year",
+        params: {
+          city: "Mumbai",
+          year: 2019,
+        },
+        query: {
+          section: "culture",
+          order: "desc",
+        },
+      },
+    };
+  },
+};
 </script>
 
 <style>

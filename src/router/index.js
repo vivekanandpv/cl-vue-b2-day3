@@ -24,16 +24,19 @@ const routes = [
   },
   {
     path: '/news',
+
     component: News,
     props: true, //  enable props at the parent
     children: [
       {
         path: ':city',
+        name: 'news-with-city', //  named route
         component: News,
         props: true, //  enable props for child
       },
       {
         path: ':city/:year',
+        name: 'news-with-city-year', //  named route
         component: News,
         props: true, //  enable props for child
       },
