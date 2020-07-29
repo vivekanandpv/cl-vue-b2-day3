@@ -25,15 +25,17 @@ const routes = [
   {
     path: '/news',
     component: News,
+    props: true, //  enable props at the parent
     children: [
-      //  Child routes are relative to their parent (/news is assumed)
       {
         path: ':city',
         component: News,
+        props: true, //  enable props for child
       },
       {
         path: ':city/:year',
         component: News,
+        props: true, //  enable props for child
       },
     ],
   },

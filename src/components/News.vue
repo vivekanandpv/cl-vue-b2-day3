@@ -7,14 +7,7 @@
 
 <script>
 export default {
-  data: function () {
-    return {
-      //  this refers to the current instance of the component
-      //  $route is the application-wide singleton injected by Vue
-      city: this.$route.params.city,
-      year: this.$route.params.year,
-    };
-  },
+  props: ["city", "year"],
 };
 </script>
 
