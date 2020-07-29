@@ -2,12 +2,18 @@
   <div>
     <h3>News</h3>
     <p>City: {{city}} Year: {{year}}</p>
+    <p>Query params: {{queryParams}}</p>
   </div>
 </template>
 
 <script>
 export default {
   props: ["city", "year"],
+  data: function () {
+    return {
+      queryParams: this.$route.query,
+    };
+  },
 };
 </script>
 
