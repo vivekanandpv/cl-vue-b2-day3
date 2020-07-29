@@ -13,15 +13,15 @@ const routes = [
     component: Home,
   },
   {
-    path: 'about',
+    path: '/about',
     component: About,
   },
   {
-    path: 'contact',
+    path: '/contact',
     component: Contact,
   },
   {
-    path: 'news',
+    path: '/news',
     component: News,
   },
 ];
