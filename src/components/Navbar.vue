@@ -31,6 +31,11 @@
           </router-link>
         </li>
         <li class="nav-item">
+          <router-link to="/state-management" exact class="nav-link">
+            <span>State Management</span>
+          </router-link>
+        </li>
+        <li class="nav-item">
           <!-- binding to router-link props dynamically -->
           <router-link :to="link" exact class="nav-link">
             <span>News</span>

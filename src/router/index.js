@@ -19,10 +19,11 @@ const routes = [
   },
   {
     path: '/contact',
-    //  Contact component will be loaded only when
-    //  route matches for the first time
-    //  Make sure you don't accidentally import the components at the top
     component: () => import('../components/Contact.vue'),
+  },
+  {
+    path: '/state-management',
+    component: () => import('../components/StateManagement.vue'),
   },
   {
     path: '/news',
