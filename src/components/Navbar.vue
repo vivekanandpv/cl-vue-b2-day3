@@ -36,6 +36,11 @@
           </router-link>
         </li>
         <li class="nav-item">
+          <router-link to="/http" exact class="nav-link">
+            <span>Http</span>
+          </router-link>
+        </li>
+        <li class="nav-item">
           <!-- binding to router-link props dynamically -->
           <router-link :to="link" exact class="nav-link">
             <span>News</span>

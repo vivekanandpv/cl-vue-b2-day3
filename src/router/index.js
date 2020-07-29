@@ -26,6 +26,10 @@ const routes = [
     component: () => import('../components/StateManagement.vue'),
   },
   {
+    path: '/http',
+    component: () => import('../components/Http.vue'),
+  },
+  {
     path: '/news',
 
     component: News,
