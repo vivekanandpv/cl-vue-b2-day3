@@ -25,14 +25,17 @@ const routes = [
   {
     path: '/news',
     component: News,
-  },
-  {
-    path: '/news/:city',
-    component: News,
-  },
-  {
-    path: '/news/:city/:year',
-    component: News,
+    children: [
+      //  Child routes are relative to their parent (/news is assumed)
+      {
+        path: ':city',
+        component: News,
+      },
+      {
+        path: ':city/:year',
+        component: News,
+      },
+    ],
   },
   {
     path: '*',
