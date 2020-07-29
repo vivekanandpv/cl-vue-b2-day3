@@ -5,14 +5,12 @@
 </template>
 
 <script>
-import { http } from '../lib/http';
 export default {
-  //    we can make use of the new async/await from ES6
-  //    this requires the build toolchain
-  //    more info: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
   async created() {
     try {
-      const data = await http.get(`users?page=2`);
+      //  since the http client is configured for global injector,
+      //  we can use it as part of every child
+      const data = await this.$http.get(`users?page=2`);
       console.log('Server', data);
     } catch (error) {
       console.log('Error', error);
