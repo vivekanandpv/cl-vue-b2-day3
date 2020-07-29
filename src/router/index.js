@@ -2,7 +2,6 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../components/Home';
 import About from '../components/About';
-import Contact from '../components/Contact';
 import News from '../components/News';
 import NotFound from '../components/NotFound';
 
@@ -20,7 +19,10 @@ const routes = [
   },
   {
     path: '/contact',
-    component: Contact,
+    //  Contact component will be loaded only when
+    //  route matches for the first time
+    //  Make sure you don't accidentally import the components at the top
+    component: () => import('../components/Contact.vue'),
   },
   {
     path: '/news',
