@@ -35,7 +35,7 @@ const routes = [
         props: true, //  enable props for child
       },
       {
-        path: ':city/:year',
+        path: ':city/:year(20[0-2][0-9])',  //  regex here
         name: 'news-with-city-year', //  named route
         component: News,
         props: true, //  enable props for child
