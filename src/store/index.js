@@ -5,32 +5,29 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    likes: 0,
-    dislikes: 0,
+    person: {
+      firstName: 'Arun',
+      lastName: 'Kumar',
+    },
   },
   mutations: {
-    like(state, count) {
-      state.likes += count;
+    updateFirstName(state, newFirstName) {
+      state.person.firstName = newFirstName;
     },
-    dislike(state, count) {
-      state.dislikes += count;
+    updateLastName(state, newLastName) {
+      state.person.lastName = newLastName;
     },
   },
   actions: {
-    //  mutation is abstracted
-    //  actions can be asynchronous
-    //  promise chaining can be used
-    //  to create composite actions
-    //  with complex async workflows
-    likeAsync(context, count) {
-      setTimeout(() => {
-        context.commit('like', count);
-      }, 250);
-    },
-    dislikeAsync(context, count) {
-      setTimeout(() => {
-        context.commit('dislike', count);
-      }, 250);
+    changeFirstNameAsync(context, newFirstName) {
+      //  validate, etc...
+      if (newFirstName.trim().length > 0) {
+        setTimeout(() => {
+          context.commit('updateFirstName', newFirstName);
+        }, 1000);
+      } else {
+        alert('Cannot take empty or whitespace');
+      }
     },
   },
 });

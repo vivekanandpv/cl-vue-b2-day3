@@ -1,9 +1,11 @@
 <template>
   <div id="app">
     <app-navbar></app-navbar>
-    <h2>Welcome to Vue App</h2>
-    <hr />
-    <router-view></router-view>
+    <div class="container p-2">
+      <h2>Welcome to Vue App</h2>
+      <hr />
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 

@@ -2,14 +2,16 @@
   <div class="card">
     <div class="card-body">
       <h3>Left Pane</h3>
+      <p>
+        First Name: {{ person.firstName }}; Last Name: {{ person.lastName }}
+      </p>
       <hr />
-      <button type="button" class="btn btn-primary" @click="like">
-        Likes
-        <span class="badge badge-light">{{ nLikes }}</span>
-      </button>
-      <button type="button" class="btn btn-primary ml-4" @click="dislike">
-        Dislikes
-        <span class="badge badge-light">{{ nDislikes }}</span>
+      <div class="form-group">
+        <label>New first name</label>
+        <input type="text" class="form-control" v-model="firstName" />
+      </div>
+      <button type="button" class="btn btn-primary" @click="update">
+        Update First Name
       </button>
     </div>
   </div>
@@ -17,22 +19,19 @@
 
 <script>
 export default {
+  data() {
+    return {
+      firstName: "",
+    };
+  },
   computed: {
-    nLikes() {
-      return this.$store.state.likes;
-    },
-    nDislikes() {
-      return this.$store.state.dislikes;
+    person() {
+      return this.$store.state.person;
     },
   },
   methods: {
-    //  it's like working with a service as in Spring
-
-    like() {
-      this.$store.dispatch("likeAsync", 3);
-    },
-    dislike() {
-      this.$store.dispatch("dislikeAsync", 5);
+    update() {
+      this.$store.dispatch("changeFirstNameAsync", this.firstName);
     },
   },
 };
